@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
 * {
     user-select: none;
     box-sizing: border-box;
@@ -73,7 +76,7 @@ button {
     top: 0;
     left: 0;
     z-index: 100;
-    box-shadow: 3px 3px black;
+    box-shadow: -1px 3px black;
 }
 
 .nav {
@@ -87,16 +90,6 @@ button {
     border-radius: 15px;
 }
 
-.drawing {
-    pointer-events: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-}
-
 .home_container {
     padding-top: 24px;
     row-gap: 24px;
@@ -107,6 +100,9 @@ button {
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
+}
+
+.banner{
     margin-bottom: 50px;
 }
 
@@ -134,6 +130,11 @@ button {
     background-color: #FBBC05;
 }
 
+.name {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
 .line {
     text-decoration: underline;
 }
@@ -144,24 +145,48 @@ button {
     justify-content: space-evenly;
     align-items: center;
 }
+.home-buttons{
+    width: 350px;
+    display: flex;
+    justify-content: space-evenly;
+}
 
 .home-button {
     background-color: #4285F4;
-    padding: 15px 30px;
+    padding: 15px 20px;
+    color: #000;
     border-radius: 20px;
-    color: #fff;
     border: 1px solid black;
     box-shadow: 3px 3px black;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     margin-bottom: 20px;
+    flex-direction: row;
 }
 
 .home-button:hover {
     background-color: #5f9bfa;
     box-shadow: 1px 1px black;
+} 
+
+.home-button2 {
+    background-color: #fff;
+    padding: 15px 20px;
+    color: #000;
+    border-radius: 20px;
+    border: 1px solid black;
+    box-shadow: 3px 3px black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin-bottom: 20px;
+    flex-direction: row;
 }
 
+.home-button2:hover {
+    box-shadow: 1px 1px black;
+} 
+
+.aboutme,
 .techstack {
     background-color: #ffff;
     padding-bottom: 80px;
@@ -187,6 +212,11 @@ button {
 .tech-img {
     object-fit: contain;
     width: 50%;
+    transition: .3s;
+}
+
+.tech-img:hover {
+    transform: translateY(-5px);
 }
 
 .card-project {
@@ -261,6 +291,7 @@ button {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    margin:10px 0 15px;
 }
 
 .icon-img{
@@ -282,30 +313,59 @@ button {
     background-color: #fdfafa;
     box-shadow: 1px 1px black;
 }
+.about{
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.about-pic{
+    height: 450px;
+    width: 400px;
+}
 
 .contact {
-    background-color: #ffff;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
 .ctitle{
-    font-weight: 500;
+    
     font-family: 'Roboto', sans-serif;
 }
 .contact-me{
     font-size: 30px;
-    margin: 10px 0 15px;
+    margin: 10px 0 5px;
+    flex-wrap: wrap;
+    display: flex;
 }
 
-.socials{
-    padding: 10px;
+.cta{
+    margin: 15px 0 50px;
+    font-size: 18px;
+    background-color: #FBBC05;
     color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.cta:hover{
+    background-color: #FDD35b;
+}
+.socials{
+    padding: 8px;
+    color: #000;
+    transition: .3s;
 }
 .socials:hover{
-    background-color: #f5f5f5;
+    background-color: #242323;
     border-radius: 15px;
+    transform: translateY(-5px);
 }
 
 .footer{
-    background-color: #000;
+    background-color: #0b0b0b;
     padding:40px;
     display: flex;
     justify-content: center;
@@ -317,12 +377,12 @@ button {
     font-optical-sizing: auto;
     font-weight: 400;
 }
+.footer a{
+    color:#9c9a9a;
+}
 @media screen and (min-width: 320px) {
     .banner {
         flex-direction: column;
-    }
-    .contact{
-        flex-direction: column-reverse;
     }
     .contact-pic{
         width: 200px;
@@ -357,10 +417,6 @@ button {
         flex-direction: column;
     }
 
-    .contact{
-        flex-direction: column-reverse;
-    }
-
     #pic {
         width: 250px;
         height: 100px;
@@ -381,10 +437,6 @@ button {
 @media screen and (min-width: 770px) {
     .banner {
         flex-direction: column;
-    }
-
-    .contact{
-        flex-direction: column-reverse;
     }
 
     #pic {
@@ -409,7 +461,7 @@ button {
         flex-direction: row-reverse;
     }
     .contact{
-        flex-direction: row-reverse;
+        flex-direction: column;
     }
 
     .container {
