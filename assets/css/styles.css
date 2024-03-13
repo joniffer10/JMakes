@@ -213,6 +213,7 @@ button {
     object-fit: contain;
     width: 50%;
     transition: .3s;
+    margin-bottom:5px;
 }
 
 .tech-img:hover {
